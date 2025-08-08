@@ -1,0 +1,43 @@
+exchange:
+  mode: spot
+  testnet: true
+  base_url_spot: "https://testnet.binance.vision"
+  base_url_futures: "https://testnet.binancefuture.com"
+  ws_url_spot: "wss://testnet.binance.vision/ws"
+  ws_url_futures: "wss://stream.binancefuture.com/ws"
+symbols: ["FETUSDT","BTCUSDT","ETHUSDT","BNBUSDT","SOLUSDT","XRPUSDT","DOGEUSDT","TONUSDT","ADAUSDT","TRXUSDT","LINKUSDT","NEARUSDT"]
+latency:
+  decision_ms: 250
+risk:
+  max_position: 0.01
+  max_daily_loss_pct: 0.5
+  max_orders_per_min: 100
+  per_trade_notional: 50.0
+fees:
+  maker_bps: 9.0
+  taker_bps: 10.0
+execution:
+  paper_trading: false
+  post_only: true
+  time_in_force: "GTC"
+  order_timeout_ms: 2000
+features:
+  top_n_depth: 5
+  ewma_alpha: 0.06
+model:
+  proba_threshold: 0.6
+  k_ticks_ahead: 5
+  label_bps: 2.0
+  random_state: 42
+  alpha: 0.0001
+  eta0: 0.01
+  penalty: "l2"
+logging:
+  path: "data/logs/trade.jsonl"
+  level: "INFO"
+rate_limit:
+  capacity_per_min: 1200
+  refill_per_sec: 20
+kill_switch:
+  heartbeat_ms: 5000
+  dd_pct: 0.6
