@@ -1,0 +1,24 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.build/
+dist/
+
+# Envs & secrets
+.venv/
+.env
+.env.*
+
+# Logs & data
+data/logs/
+data/backtest/*.png
+*.parquet
+*.csv
+
+# IDE
+.vscode/
+.idea/
